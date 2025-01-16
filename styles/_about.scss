@@ -1,0 +1,171 @@
+@use "variables" as v;
+@use "sass:color";
+@use "mixins" as m;
+
+.about-section {
+    padding: 140px 0 0 0;
+
+    .about {
+        margin: 0 auto;
+        @include m.d-flex(start, center, nowrap, column, 0, 130px);
+
+        &__quality {
+            width: 100%;
+            height: 400px;
+            padding: 0 0 0 15px;
+            background: url('../assets/noute_alpha.webp') 90% 99%/contain no-repeat;
+
+            &-title {
+                @include m.font(45px, 400);
+            }
+
+            &-desc {
+                margin: 10px 0 0 0;
+                max-width: 590px;
+                @include m.font(20px, 300);
+            }
+
+            @media (max-width: v.$media_xl) {
+                background: 
+                    linear-gradient(180deg, rgba(103,143,242,1) 0%, rgba(0,0,0,0) 74%),
+                    url('../assets/noute_alpha.webp') 90% 45%/500px no-repeat;
+            }
+
+            @media (max-width: v.$media_md) {
+
+                &-title {
+                    @include m.font(35px, 400);
+                }
+    
+                &-desc {
+                    margin: 10px 0 0 0;
+                    max-width: 500px;
+                    @include m.font(16px, 300);
+                }
+
+                background: url('../assets/noute_alpha.webp') 99% 100%/450px no-repeat;
+            }
+
+            @media (max-width: v.$media_sm) {
+                &-desc {
+                    margin: 10px 0 0 0;
+                    max-width: 320px;
+                }
+                background: url('../assets/noute_alpha.webp') 150px 110%/400px no-repeat;
+            }
+        }
+
+        &__always {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            padding: 0 15px 0 0px;
+            @include m.d-flex(end, end, nowrap, column, 0, 20px);
+
+            &::before {
+                content: '';
+                width: 100%;
+                height: 100%;
+                @include m.position(absolute, -1, -1, top, left, 0, -250px);
+                background: url('../assets/phone_alpha_v2.webp') center/contain no-repeat;
+                rotate: 15deg;
+            }
+
+            &-title {
+                @include m.font(45px, 400);
+            }
+
+            &-desc {
+                line-height: 1.4;
+                text-align: right;
+                margin: 10px 0 0 0;
+                max-width: 480px;
+                @include m.font(20px, 300);
+            }
+
+            @media (max-width: v.$media_xl) {
+                &::before {
+                    content: '';
+                    @include m.position(absolute, -1, -1, top, left, -35px, -400px);
+                }
+            }
+
+            @media (max-width: v.$media_lg) {
+                height: 450px;
+
+                &::before {
+                    content: '';
+                    @include m.position(absolute, -1, -1, top, left, -50px, -400px);
+                }
+            }
+
+            @media (max-width: v.$media_md) {
+                height: 400px;
+                @include m.d-flex(start, end, nowrap, column, 0, 20px);
+
+                &-title {
+                    @include m.font(35px, 400);
+                }
+    
+                &-desc {
+                    margin: 10px 0 0 0;
+                    max-width: 340px;
+                    @include m.font(16px, 300);
+                }
+
+                &::before {
+                    content: '';
+                    @include m.position(absolute, -1, -1, top, left, 0px, -270px);
+                    background: url('../assets/phone_alpha_v2.webp') 0 0/90% no-repeat;
+                    rotate: 75deg;
+                }
+            }
+
+            @media (max-width: v.$media_sm) {
+                &::before {
+                    content: '';
+                    @include m.position(absolute, -1, -1, top, left, 90px, -225px);
+                    background: url('../assets/phone_alpha_v2.webp') 0 0/90% no-repeat;
+                }
+            }
+        }
+
+        &__approach {
+            width: 100%;
+            height: 800px;
+            padding: 0 0 0 15px;
+            background: url('../assets/approach_alpha.webp') 115% 100%/contain no-repeat;
+
+            &-title {
+                margin-top: 200px;
+                @include m.font(45px, 400);
+            }
+
+            &-desc {
+                margin: 10px 0 0 0;
+                max-width: 590px;
+                @include m.font(20px, 300);
+            }
+
+            @media (max-width: v.$media_lg) {
+                &-desc {
+                    max-width: 500px;
+                }
+            }
+
+            @media (max-width: v.$media_md) {
+
+                &-title {
+                    margin-top: 50px;
+                    @include m.font(35px, 400);                
+                }
+
+                &-desc {
+                    @include m.font(16px, 300);                
+                }
+                max-width: 730px;
+                background: url('../assets/approach_alpha.webp') 115% 100%/320px no-repeat;
+            }
+        }
+    }
+}
