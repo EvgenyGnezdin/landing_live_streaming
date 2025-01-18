@@ -51,7 +51,6 @@
     }
 }
 
-
 .img-card {
     position: relative;
     width: 325px;
@@ -101,5 +100,29 @@
     &:hover {
         cursor: pointer;
         box-shadow: 0 8px 20px 12px rgb(0,0,0, .15), inset 0 -5px 70px 25px rgb(0,0,0, .20);
+    }
+}
+
+.wave-card {
+    width: 500px;
+    height: 275px;
+    background: url('../assets/wave_card_bg.svg') center / contain no-repeat;
+    @include m.d-flex(start, start, nowrap, column, 0, 35px);
+
+    &__avatar {
+        border-radius: 50px;
+        margin: 20px 0 0 20px;
+    }
+    &__quote {
+        margin: 0 30px;
+        @include m.font(20px, 400); 
+    }
+    @media (max-width: v.$media_md) {
+        width: 330px;
+        row-gap: 15px;
+        background: url('../assets/wave_card_bg.svg') 50%  0/ contain no-repeat;
+        &__quote {
+            @include m.font(12px); 
+        }
     }
 }
