@@ -1,4 +1,5 @@
 @use "variables" as v;
+@use "mixins" as m;
 @use "sass:color";
 
 
@@ -30,4 +31,23 @@
     border-radius: 20px;
     background-color: color.adjust(v.$color_white, $alpha: -0.85);
     rotate: 45deg;
+}
+
+%cloud-template {
+    width: 700px;
+    height: 240px;
+    background: url('../assets/cloud__alpha.webp') center / contain no-repeat;
+}
+
+%input-template {
+    width: 100%;
+    height: 47px;
+    border-radius: 20px;
+    border: 1px solid v.$color_gray;
+    padding: 0 1em;
+    @include m.font(25px, 400, v.$color_black);
+
+    &::placeholder {
+        @include m.font(25px, 100, v.$color_gray);
+    }
 }
